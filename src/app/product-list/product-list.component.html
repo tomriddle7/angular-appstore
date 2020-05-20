@@ -1,26 +1,22 @@
 <h2>새롭게 추천하는 앱</h2>
 
 <div class="OuterContainer" *ngFor="let product of products">
-
-  
-  <div class="Scope20">
-    <a [title]="product.name + ' details'">
-        <img class="icon" [src]="product.artworkUrl100" />
-    </a>
-  </div>
-  <div class="Scope60">
-    <span class="Name">{{ product.name }}</span>
-
-    <span class="Genre" *ngIf="product.artistName">
-        Made by {{ product.artistName }}
-    </span>
-  </div>
-  <div class="Scope20">
-    <button (click)="iTune(product.url)">
-        GET
-    </button>
-  </div>
-
-  
-
+    <div class="InnerContainer">
+        <div class="Scope20">
+            <a [title]="product.name + ' details'">
+                <img class="icon" [src]="product.artworkUrl100" />
+            </a>
+        </div>
+        <div class="Scope60">
+            <span class="Name">{{ product.name }}</span>
+            <span class="Genre" *ngIf="product.genres[0].name">
+                {{ product.genres[0].name }}
+            </span>
+        </div>
+        <div class="Scope20">
+            <button (click)="iTune(product.url)">
+                GET
+            </button>
+        </div>
+    </div>
 </div>

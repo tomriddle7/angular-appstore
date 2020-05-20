@@ -1,7 +1,7 @@
 <h2>새롭게 추천하는 앱</h2>
 
 <div class="OuterContainer" *ngFor="let product of products">
-    <div class="InnerContainer">
+    <div class="InnerContainer" [routerLink]="['/products', product.id]">
         <div class="Scope20">
             <a [title]="product.name + ' details'">
                 <img class="icon" [src]="product.artworkUrl100" />

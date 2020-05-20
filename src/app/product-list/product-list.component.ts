@@ -11,7 +11,6 @@ export class ProductListComponent {
   products = products;
 
   iTune(url) {
-    console.log(url);
     window.open(url, '_blank');
   }
 }

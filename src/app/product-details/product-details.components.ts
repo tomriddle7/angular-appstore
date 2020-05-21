@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import{ HttpClient } from '@angular/common/http';
 
-import { products } from '../products';
+interface Config {
+    resultCount: number;
+    results: Array<object>;
+}
 
 @Component({
     selector: 'app-product-details',
@@ -10,14 +14,20 @@ import { products } from '../products';
 })
 
 export class ProductDetailsComponent implements OnInit {
-    product;
+    product: object;
   
     constructor(
-      private route: ActivatedRoute,
+        private route: ActivatedRoute,
+        public http: HttpClient,
     ) { }
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
-          this.product = products[+params.get('productId')];
+          this.http
+          .get<Config>(`https://cors-anywhere.herokuapp.com/https://itunes.apple.com/lookup?id=${+params.get('productId')}&country=KR`)
+          .subscribe((appdata:Config) => {
+            this.product = appdata.results[0];
+            console.log(this.product);
+          });
         });
       }
   }

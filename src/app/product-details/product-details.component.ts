@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 import{ HttpClient } from '@angular/common/http';
 
 interface Config {
@@ -18,6 +19,7 @@ export class ProductDetailsComponent implements OnInit {
     //productDetail = detail;
     constructor(
         private route: ActivatedRoute,
+        private _location: Location,
         public http: HttpClient,
     ) { }
     ngOnInit() {
@@ -30,4 +32,12 @@ export class ProductDetailsComponent implements OnInit {
           });
         });
       }
+    
+    iTune(url) {
+      window.open(url, '_blank');
+    }
+
+    goBack() {
+      this._location.back();
+    }
   }

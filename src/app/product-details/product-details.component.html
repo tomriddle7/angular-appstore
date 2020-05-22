@@ -1,21 +1,55 @@
 <div class="Container">
+  <button class="BackButton" (click)="goBack()">◀홈화면</button>
   <div class="Summary" *ngIf="productDetail">
     <div class="Scope20">
       <img class="icon" [src]="productDetail.artworkUrl100" />
     </div>
     <div class="Scope50">
-      <h1>{{productDetail.trackName}}</h1>
-      <h1>{{productDetail.artistName}}</h1>
+      <h1 class="TitleName">{{productDetail.trackName}}</h1>
+      <h1 class="TitleName">{{productDetail.artistName}}</h1>
     </div>
     <div class="Scope30">
-      <button class="StoreButton">{{productDetail.formattedPrice}}</button>
-      <h1>{{productDetail.trackContentRating}}</h1>
+      <button class="StoreButton" (click)="iTune(productDetail.trackViewUrl)">{{productDetail.formattedPrice}}</button>
+      <h1 class="TitleName">{{productDetail.trackContentRating}}</h1>
     </div>
   </div>
-  <div class="ScreenShotP" *ngFor="let screenshot of productDetail.screenshotUrls">
-    <img class="ScreenShot" [src]="screenshot"/>
+  <div class="ScreenShotP">
+    <img class="ScreenShot" [src]="screenshot"  *ngFor="let screenshot of productDetail.screenshotUrls"/>
   </div>
-  <div>
+  <div class="Explanation">
     <span>{{productDetail.description}}</span>
+  </div>
+  <div class="UpdateviewP">
+    <div class="Title">새로운 기능</div>
+    <div class="UpdateDate">
+      <div class="ViewLeft width50">버전 {{productDetail.version}}</div>
+      <div class="ViewRight width50">{{productDetail.currentVersionReleaseDate.substr(0,4)}}년 {{productDetail.currentVersionReleaseDate.substr(5,2)}}월 {{productDetail.currentVersionReleaseDate.substr(8,2)}}일</div>
+    </div>
+    <div class="UpdateDetail">
+      <span>{{productDetail.releaseNotes}}</span>
+    </div>
+  </div>
+  <div class="OverviewP">
+    <div class="Title">정보</div>
+    <div class="Overview">
+      <div class="ViewLeft width25">제공자</div>
+      <div class="ViewRight width75">{{productDetail.sellerName}}</div>
+    </div>
+    <div class="Overview">
+      <div class="ViewLeft width25">크기</div>
+      <div class="ViewRight width75">{{(productDetail.fileSizeBytes/1024/1024).toFixed(1)}}MB</div>
+    </div>
+    <div class="Overview">
+      <div class="ViewLeft width25">카테고리</div>
+      <div class="ViewRight width75">{{productDetail.primaryGenreName}}</div>
+    </div>
+    <div class="Overview">
+      <div class="ViewLeft width25">언어</div>
+      <div class="ViewRight width75">{{productDetail.languageCodesISO2A.join(' | ')}}</div>
+    </div>
+    <div class="Overview">
+      <div class="ViewLeft width25">연령 등급</div>
+      <div class="ViewRight width75">{{productDetail.contentAdvisoryRating}}</div>
+    </div>
   </div>
 </div>

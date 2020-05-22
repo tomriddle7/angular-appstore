@@ -9,6 +9,15 @@
     padding: 20px;
   }
 
+  .BackButton {
+    background: #00000000;
+    color: #0b84fe;
+    text-align: center;
+    border: 0;
+    box-shadow: none;
+    font-size: 18px;
+  }
+
 .Summary {
     width: 100%;
     display: flex;
@@ -20,6 +29,11 @@
     width: 100%;
     height: 100%;
     border-radius: 22.37%;
+  }
+
+  .TitleName {
+    font-size: 18px;
+    font-weight: 400;
   }
 
   .Scope20 {
@@ -82,11 +96,107 @@
   }
 
   .ScreenShot {
-    display: inline-block;
+    display: inline;
     width: auto;
-    height: auto;
+    height: 100%;
     margin: 0px 5px;
   }
+
+  .Explanation {
+    line-height: 1.5;
+    word-break: break-all;
+  }
+
+  .UpdateviewP::before {
+    content: '';
+	  height: 0;
+	  border-bottom: 1px #808084 solid;
+	  left: 24px;
+	  right: 24px;
+	  position: absolute;
+  }
+
+  .UpdateviewP::after {
+    content: '';
+	  height: 0;
+	  border-bottom: 1px #808084 solid;
+	  left: 24px;
+	  right: 24px;
+	  position: absolute;
+  }
+
+  .UpdateDate {
+    width:100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0px;
+  }
+
+  .UpdateDetail {
+    width:100%;
+    line-height: 1.5;
+    margin: 8px 0px;
+  }
+  
+  .OverviewP {
+    line-height: 1.5;
+  }
+
+  .Overview {
+    width:100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0px;
+  }
+
+  .Overview::after {
+    content: '';
+	  height: 0;
+	  border-bottom: 1px #808084 solid;
+	  left: 24px;
+	  right: 24px;
+	  position: absolute;
+  }
+
+  .ViewLeft {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ViewRight {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .width25 {
+    width: 25vw;
+  }
+
+  .width50 {
+    width: 50vw;
+  }
+
+  .widt75 {
+    width: 75vw;
+  }
+
+  .Title {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

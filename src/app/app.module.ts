@@ -11,6 +11,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { AppListComponent } from './app-list/app-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { searchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       { path: 'app', component: AppListComponent },
       { path: 'game', component: GameListComponent },
       { path: 'app/:productId', component: ProductDetailsComponent },
+      { path: 'search', component: searchComponent },
     ]),
     CommonModule,
     HttpClientModule
@@ -31,7 +33,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductListComponent,
     AppListComponent,
     GameListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    searchComponent
   ],
   bootstrap: [ AppComponent ]
 })

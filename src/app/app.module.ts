@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { GameListComponent } from './game-list/game-list.component';
+import { AppListComponent } from './app-list/app-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      { path: 'app', component: AppListComponent },
+      { path: 'game', component: GameListComponent },
       { path: 'app/:productId', component: ProductDetailsComponent },
     ]),
     CommonModule,
@@ -25,6 +29,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     AppComponent,
     TopBarComponent,
     ProductListComponent,
+    AppListComponent,
+    GameListComponent,
     ProductDetailsComponent
   ],
   bootstrap: [ AppComponent ]

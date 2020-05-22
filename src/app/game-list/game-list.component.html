@@ -1,0 +1,49 @@
+<h2 *ngIf="upcomingApps">{{ upcomingApps.title }}</h2>
+
+<div *ngIf="upcomingApps">
+    <div class="OuterContainer" *ngFor="let product of upcomingApps.results">
+        <div class="InnerContainer" [routerLink]="['/app', product.id]">
+            <div class="Scope20">
+                <a [title]="product.name + ' details'">
+                    <img class="icon" [src]="product.artworkUrl100" />
+                </a>
+            </div>
+            <div class="Scope60">
+                <span class="Name">{{ product.name }}</span>
+                <span class="Genre" *ngIf="product.genres[0].name">
+                    {{ product.genres[0].name }}
+                </span>
+            </div>
+            <div class="Scope20">
+                <button (click)="iTune(product.url)">
+                    GET
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 *ngIf="upcomingGames">{{ upcomingGames.title }}</h2>
+
+<div *ngIf="upcomingGames">
+    <div class="OuterContainer" *ngFor="let product of upcomingGames.results">
+        <div class="InnerContainer" [routerLink]="['/app', product.id]">
+            <div class="Scope20">
+                <a [title]="product.name + ' details'">
+                    <img class="icon" [src]="product.artworkUrl100" />
+                </a>
+            </div>
+            <div class="Scope60">
+                <span class="Name">{{ product.name }}</span>
+                <span class="Genre" *ngIf="product.genres[0].name">
+                    {{ product.genres[0].name }}
+                </span>
+            </div>
+            <div class="Scope20">
+                <button (click)="iTune(product.url)">
+                    GET
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

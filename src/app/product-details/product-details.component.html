@@ -1,0 +1,21 @@
+<div class="Container">
+  <div class="Summary" *ngIf="productDetail">
+    <div class="Scope20">
+      <img class="icon" [src]="productDetail.artworkUrl100" />
+    </div>
+    <div class="Scope50">
+      <h1>{{productDetail.trackName}}</h1>
+      <h1>{{productDetail.artistName}}</h1>
+    </div>
+    <div class="Scope30">
+      <button class="StoreButton">{{productDetail.formattedPrice}}</button>
+      <h1>{{productDetail.trackContentRating}}</h1>
+    </div>
+  </div>
+  <div class="ScreenShotP" *ngFor="let screenshot of productDetail.screenshotUrls">
+    <img class="ScreenShot" [src]="screenshot"/>
+  </div>
+  <div>
+    <span>{{productDetail.description}}</span>
+  </div>
+</div>

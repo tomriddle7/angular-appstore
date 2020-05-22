@@ -9,13 +9,13 @@ interface Config {
 
 @Component({
     selector: 'app-product-details',
-    templateUrl: './product-details.components.html',
-    styleUrls: ['./product-details.components.css']
+    templateUrl: './product-details.component.html',
+    styleUrls: ['./product-details.component.css']
 })
 
 export class ProductDetailsComponent implements OnInit {
-    product: object;
-  
+    productDetail: any;
+    //productDetail = detail;
     constructor(
         private route: ActivatedRoute,
         public http: HttpClient,
@@ -25,8 +25,8 @@ export class ProductDetailsComponent implements OnInit {
           this.http
           .get<Config>(`https://cors-anywhere.herokuapp.com/https://itunes.apple.com/lookup?id=${+params.get('productId')}&country=KR`)
           .subscribe((appdata:Config) => {
-            this.product = appdata.results[0];
-            console.log(this.product);
+            this.productDetail = appdata.results[0];
+            console.log(this.productDetail);
           });
         });
       }

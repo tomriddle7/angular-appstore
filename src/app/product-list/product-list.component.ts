@@ -1,15 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import{ HttpClient } from '@angular/common/http';
 
-import { products } from '../products';
+interface Result {
+  feed: object;
+}
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = products;
+export class ProductListComponent implements OnInit {
+  upcomingApps : any;
+  upcomingGames : any;
 
+  constructor(
+    public http: HttpClient,
+  ) { }
+
+  ngOnInit() {
+    this.http
+      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/new-apps-we-love/all/10/explicit.json`)
+      .subscribe((appdata:Result) => {
+        this.upcomingApps = appdata.feed;
+        //console.log(this.upcomingApps);
+    });
+    this.http
+      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/new-games-we-love/all/10/explicit.json`)
+      .subscribe((appdata:Result) => {
+        this.upcomingGames = appdata.feed;
+        //console.log(this.upcomingGames);
+    });
+  }
   iTune(url) {
     window.open(url, '_blank');
   }

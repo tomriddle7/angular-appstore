@@ -1,6 +1,6 @@
 # Angular-Appstore
 
-리액트로 제작헀던 앱스토어(https://github.com/tomriddle7/nomad_store)를 앵귤러로 다시 제작한 프로젝트입니다.
+리액트로 제작헀던 [앱스토어](https://github.com/tomriddle7/nomad_store)를 앵귤러로 다시 제작한 프로젝트입니다.
 
 ## Angular version
 이 프로젝트는 [Angular CLI](https://github.com/angular/angular-cli) 9.1.5 버전으로 제작되었습니다.

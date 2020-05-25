@@ -1,8 +1,8 @@
-<div class="Container">
+<div class="Container" *ngIf="productDetail">
   <button class="BackButton" (click)="goBack()">◀홈화면</button>
   <div class="Summary" *ngIf="productDetail">
     <div class="Scope20">
-      <img class="icon" [src]="productDetail.artworkUrl100" />
+      <img class="Icon" [src]="productDetail.artworkUrl100" />
     </div>
     <div class="Scope50">
       <h1 class="TitleName">{{productDetail.trackName}}</h1>

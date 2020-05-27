@@ -1,6 +1,8 @@
-<h2 *ngIf="upcomingApps">{{ upcomingApps.title }}</h2>
+<toggle-button (changed)="checked=$event"></toggle-button>
 
-<div *ngIf="upcomingApps">
+<h2 *ngIf="upcomingApps && checked">{{ upcomingApps.title }}</h2>
+
+<div *ngIf="upcomingApps && checked">
     <div class="OuterContainer" *ngFor="let product of upcomingApps.results">
         <div class="InnerContainer" [routerLink]="['/app', product.id]">
             <div class="Scope20">
@@ -23,9 +25,9 @@
     </div>
 </div>
 
-<h2 *ngIf="upcomingGames">{{ upcomingGames.title }}</h2>
+<h2 *ngIf="upcomingGames && !checked">{{ upcomingGames.title }}</h2>
 
-<div *ngIf="upcomingGames">
+<div *ngIf="upcomingGames && !checked">
     <div class="OuterContainer" *ngFor="let product of upcomingGames.results">
         <div class="InnerContainer" [routerLink]="['/app', product.id]">
             <div class="Scope20">

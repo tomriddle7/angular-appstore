@@ -11,8 +11,10 @@ interface Result {
   styleUrls: ['./app-list.component.css']
 })
 export class AppListComponent implements OnInit {
-  upcomingApps : any;
-  upcomingGames : any;
+  upcomingApps: any;
+  upcomingGames: any;
+
+  checked: boolean = true;
 
   constructor(
     public http: HttpClient,
@@ -20,13 +22,13 @@ export class AppListComponent implements OnInit {
 
   ngOnInit() {
     this.http
-      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/top-free/all/10/explicit.json`)
+      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/top-free/all/25/explicit.json`)
       .subscribe((appdata:Result) => {
         this.upcomingApps = appdata.feed;
         //console.log(this.upcomingApps);
     });
     this.http
-      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/top-paid/all/10/explicit.json`)
+      .get<Result>(`https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/kr/ios-apps/top-paid/all/25/explicit.json`)
       .subscribe((appdata:Result) => {
         this.upcomingGames = appdata.feed;
         //console.log(this.upcomingGames);

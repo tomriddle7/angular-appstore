@@ -12,6 +12,7 @@ import { GameListComponent } from './game-list/game-list.component';
 import { AppListComponent } from './app-list/app-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { searchComponent } from './search/search.component';
+import { ToggleButtonComponent } from './toggle-button.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { searchComponent } from './search/search.component';
     AppListComponent,
     GameListComponent,
     ProductDetailsComponent,
-    searchComponent
+    searchComponent,
+    ToggleButtonComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -32,9 +32,6 @@ export class ProductListComponent implements OnInit {
         //console.log(this.upcomingGames);
     });
   }
-  iTune(url) {
-    window.open(url, '_blank');
-  }
 }
 
 

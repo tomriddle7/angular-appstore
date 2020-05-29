@@ -1,0 +1,24 @@
+<h2 *ngIf="appDatas && appDatas.title">{{ appDatas.title }}</h2>
+
+<div *ngIf="appDatas && appDatas.results">
+    <div class="OuterContainer" *ngFor="let appData of appDatas.results">
+        <div class="InnerContainer" [routerLink]="['/app', appData.id]">
+            <div class="Scope20">
+                <a [title]="appData.name + ' details'">
+                    <img class="icon" [src]="appData.artworkUrl100" />
+                </a>
+            </div>
+            <div class="Scope60">
+                <span class="Name">{{ appData.name }}</span>
+                <span class="Genre" *ngIf="appData.genres[0].name">
+                    {{ appData.genres[0].name }}
+                </span>
+            </div>
+            <div class="Scope20">
+                <button (click)="iTune(appData.url)">
+                    GET
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

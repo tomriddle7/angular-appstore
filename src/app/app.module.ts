@@ -13,6 +13,7 @@ import { AppListComponent } from './app-list/app-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { searchComponent } from './search/search.component';
 import { ToggleButtonComponent } from './toggle-button.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { ToggleButtonComponent } from './toggle-button.component';
     GameListComponent,
     ProductDetailsComponent,
     searchComponent,
-    ToggleButtonComponent
+    ToggleButtonComponent,
+    ProductsComponent
   ],
   bootstrap: [ AppComponent ]
 })

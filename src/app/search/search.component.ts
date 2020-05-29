@@ -31,8 +31,20 @@ export class searchComponent {
     this.http
       .get<Result>(`https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=${customerData.property}&country=kr&entity=software`)
       .subscribe((appdata:Result) => {
+        /*let searchRS = appdata.results.map(
+          function(app) {
+            return {
+              id: app.trackId,
+              name: app.trackName,
+              artworkUrl100: app.artworkUrl100,
+              //genres[0].name: app.primaryGenreName,
+              url: app.trackViewUrl
+            }
+          });
+        this.searchResult = {title: "검색결과", results: searchRS};
+        console.log(searchRS);*/
+
         this.searchResult = appdata.results;
-        //console.log(this.searchResult);
     });
   }
 
